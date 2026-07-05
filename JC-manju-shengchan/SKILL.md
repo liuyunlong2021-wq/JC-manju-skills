@@ -48,6 +48,12 @@ It only defines the sequence, data flow, and handoff contracts between stages.
  │                                      + prompts/veo-video-prompts.json
  │                                      + prompts/ltx-video-prompts.json
  │
+ ├─[*]─ JC-meitichuangzuo      → 媒体创作引擎
+ │       NewAPI 全渠道路由（T8/RH/火山），提交/轮询/下载
+ │
+ ├─[*]─ banana-storyboard-edit-prompt → 分镜面板修复
+ │       已有 storyboard 图片局部修图，保连续性
+ │
  ├─[7]─ JC-manju-yinse        → prompts/tts-voice-design.json
  │       角色→TTS音色设计
  │
