@@ -12,6 +12,10 @@
 
 ---
 
+## 📄 许可
+
+Creative Commons BY-NC 4.0 — 个人学习、非商业使用免费。**商用必须事先获得授权**。
+
 ## 📦 安装
 
 打开**韭菜盒子 APP**，在对话框中输入：
@@ -30,6 +34,10 @@ git clone https://github.com/liuyunlong2021-wq/JC-manju-skills.git ~/.agents/ski
 
 ---
 
+## 📄 许可
+
+Creative Commons BY-NC 4.0 — 个人学习、非商业使用免费。**商用必须事先获得授权**。
+
 ## 🗂️ Skill 清单
 
 | 阶段 | Skill | 说明 |
@@ -46,6 +54,10 @@ git clone https://github.com/liuyunlong2021-wq/JC-manju-skills.git ~/.agents/ski
 | 🎬 合成 | `JC-manju-hecheng` | 视频拼接 + 字幕合成 |
 
 ---
+
+## 📄 许可
+
+Creative Commons BY-NC 4.0 — 个人学习、非商业使用免费。**商用必须事先获得授权**。
 
 ## 🚀 使用
 
@@ -69,6 +81,10 @@ git clone https://github.com/liuyunlong2021-wq/JC-manju-skills.git ~/.agents/ski
 ```
 
 ---
+
+## 📄 许可
+
+Creative Commons BY-NC 4.0 — 个人学习、非商业使用免费。**商用必须事先获得授权**。
 
 <p align="center">
   <br>
