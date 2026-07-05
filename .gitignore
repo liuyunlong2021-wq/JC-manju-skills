@@ -1,0 +1,5 @@
+# Only track JC-manju-* skill folders
+/*
+!/JC-manju-*/
+!/.gitignore
+!/README.md
