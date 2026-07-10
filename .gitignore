@@ -1,10 +1,8 @@
-# Only track JC-manju-* skill folders
+# Track JC-* skill folders and config
 /*
-!/JC-manju-*/
+!/JC-*/
 !/.gitignore
 !/README.md
-!/assets/
 !/LICENSE
-!/JC-meitichuangzuo/
-!/banana-storyboard-edit-prompt/
 !/CLAUDE.md
+!/index.json
