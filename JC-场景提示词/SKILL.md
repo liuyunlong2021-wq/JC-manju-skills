@@ -1,6 +1,6 @@
 ---
 name: JC-场景提示词
-description: 输入场景描述（或读取 wiki/世界观/*.md）→ Pinterest 搜索真实场景参考图 → 分析图片提取视觉DNA → 融合场景需求生成场景设定图 JSON → 写入 wiki/世界观/场景名.design.json。与短剧/小说世界模型共用 Wiki 架构。触发词：场景设计、场景设定图、场景提示词、场景概念图、scene design、画场景、设计场景、空镜设计。
+description: 输入场景描述（或读取 wiki/场景/*.md）→ Pinterest 搜索真实场景参考图 → 分析图片提取视觉DNA → 融合场景需求生成场景设定图 JSON → 写入 wiki/场景/场景名.design.json。与短剧/小说世界模型共用 Wiki 架构。触发词：场景设计、场景设定图、场景提示词、场景概念图、scene design、画场景、设计场景、空镜设计。
 triggers:
   - "场景设计"
   - "场景设定图"
@@ -143,21 +143,27 @@ view_image 查看选定的参考图
 
 ## 文件约定（与 Wiki 架构联动）
 
-本 skill 与 **JC-duanju-shijiemoxing** / **JC-xiaoshuo-shijiemoxing** 共用 `wiki/世界观/` 目录。
+本 skill 与 **JC-duanju-shijiemoxing** / **JC-xiaoshuo-shijiemoxing** 共用 `wiki/场景/` 目录。
 
 | 文件 | 来源 | 说明 |
 |------|------|------|
-| `wiki/世界观/世界设定.md` | 世界模型 | 世界观描述——本 skill 的输入源 |
-| `wiki/世界观/场景名.design.json` | **本 skill** | 场景设定图 JSON——本 skill 的产出 |
+| `wiki/场景/场景名.md` | 世界模型 | 场景档案（空间引擎/空间描述）——本 skill 的输入源 |
+| `wiki/场景/场景名.design.json` | **本 skill** | 场景设定图 JSON——本 skill 的产出 |
+| `wiki/世界/世界设定.md` | 世界模型 | 世界观描述（辅助参考）|
+
+### 联动要点
+- 读取 `wiki/场景/场景名.md` 中的「空间描述」「标志材质」「光影基调」→ 直接作为 Pinterest 搜索关键词
+- 读取「空间引擎」中的「原型」字段 → 如果原型是知名空间（如「卢浮宫式」），搜索词直接包含该原型
+- 输出 JSON 写入同一目录：`wiki/场景/场景名.design.json`
 
 ### 多场景流程
 
 ```
-扫描 wiki/世界观/世界设定.md + 剧本场景列表
+扫描 wiki/场景/ 目录找到所有 .md 场景档案（或从剧本提取场景列表）
     ↓
 阶段 0.5 全剧确认风格 → 所有场景共用
     ↓
-逐场景：提取场景描述 → 搜参考图 → 生成 .design.json → 下一个
+逐场景：读取 wiki/场景/场景名.md → 提取空间描述/标志材质/原型 → 搜参考图 → 生成 wiki/场景/场景名.design.json → 下一个
     ↓
 更新 CLAUDE.md ## [场景设计] 区块
 ```

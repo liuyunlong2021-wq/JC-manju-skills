@@ -1,6 +1,6 @@
 ---
 name: JC-道具提示词
-description: 输入道具描述（或读取剧本中的道具列表）→ Pinterest 搜索真实道具参考图 → 分析图片提取视觉DNA → 融合道具需求生成道具设定图 JSON → 写入 wiki/世界观/道具名.design.json。与短剧/小说世界模型共用 Wiki 架构。触发词：道具设计、道具设定图、道具提示词、道具清单、prop design、画道具、设计道具。
+description: 输入道具描述（或读取 wiki/道具/*.md）→ Pinterest 搜索真实道具参考图 → 分析图片提取视觉DNA → 融合道具需求生成道具设定图 JSON → 写入 wiki/道具/道具名.design.json。与短剧/小说世界模型共用 Wiki 架构。触发词：道具设计、道具设定图、道具提示词、道具清单、prop design、画道具、设计道具。
 triggers:
   - "道具设计"
   - "道具设定图"
@@ -140,21 +140,27 @@ view_image 查看选定的参考图
 
 ## 文件约定（与 Wiki 架构联动）
 
-本 skill 与 **JC-duanju-shijiemoxing** / **JC-xiaoshuo-shijiemoxing** 共用 `wiki/世界观/` 目录。
+本 skill 与 **JC-duanju-shijiemoxing** / **JC-xiaoshuo-shijiemoxing** 共用 `wiki/道具/` 目录。
 
 | 文件 | 来源 | 说明 |
 |------|------|------|
-| `wiki/世界观/世界设定.md` | 世界模型 | 世界观描述——输入源 |
-| `wiki/世界观/道具名.design.json` | **本 skill** | 道具设定图 JSON——产出 |
+| `wiki/道具/道具名.md` | 世界模型 | 道具档案（道具引擎/视觉锚点）——本 skill 的输入源 |
+| `wiki/道具/道具名.design.json` | **本 skill** | 道具设定图 JSON——本 skill 的产出 |
+| `wiki/世界/世界设定.md` | 世界模型 | 世界观描述（辅助参考）|
+
+### 联动要点
+- 读取 `wiki/道具/道具名.md` 中的「标志形状」「标志材质」「识别标记」→ 直接作为 Pinterest 搜索关键词
+- 读取「道具引擎」中的「原型」字段 → 如果原型是知名道具（如「金箍棒式」），搜索词直接包含该原型
+- 输出 JSON 写入同一目录：`wiki/道具/道具名.design.json`
 
 ### 多道具流程
 
 ```
-扫描剧本提取道具列表
+扫描 wiki/道具/ 目录找到所有 .md 道具档案（或从剧本提取道具列表）
     ↓
 阶段 0.5 全剧确认风格 → 所有道具共用
     ↓
-逐道具：提取描述 → 搜参考图 → 生成 .design.json → 下一个
+逐道具：读取 wiki/道具/道具名.md → 提取标志形状/材质/原型 → 搜参考图 → 生成 wiki/道具/道具名.design.json → 下一个
     ↓
 更新 CLAUDE.md ## [道具设计] 区块
 ```
