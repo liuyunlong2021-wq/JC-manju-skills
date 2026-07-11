@@ -16,7 +16,8 @@ git clone https://github.com/liuyunlong2021-wq/JC-manju-skills.git ~/.agents/ski
 
 | 阶段 | Skill | 说明 |
 |------|-------|------|
-| ✍️ 创作 | `JC-短剧-世界模型` | 从零创作短剧，建制→写作→改写，基于世界观+极致角色+催化剂机制 |
+| ✍️ 创作 | `JC-短剧-世界模型` | 从零创作短剧，原型激发+三角引擎+逐场写作 |
+| ✍️ 创作 | `JC-短故事` | 从零创作知乎短篇，第一人称，9阶段管线 |
 | 👤 资产 | `JC-角色设计提示词` | Pinterest 搜参考图 → 提取视觉DNA → 角色设定图 JSON |
 | 🏠 资产 | `JC-场景提示词` | Pinterest 搜参考图 → 提取视觉DNA → 场景设定图 JSON |
 | 🔧 资产 | `JC-道具提示词` | Pinterest 搜参考图 → 提取视觉DNA → 道具设定图 JSON |
